@@ -279,8 +279,8 @@ export function StoryPointEstimator() {
           </p>
         </div>
       )}
-// Add this tooltip text in the Team Members section, just before the team members list
 <div className="flex flex-wrap gap-2 mt-2">
+  {/* Tooltip for delete functionality */}
   <p className="w-full text-sm text-gray-500 italic mb-2">
     Hover over items to delete them
   </p>
@@ -329,9 +329,10 @@ export function StoryPointEstimator() {
           ))}
         </div>
       </div>
-      // Also add the tooltip text in the Tasks section, before the tasks list
+{/* Tasks section */}
 {tasks.length > 0 && (
   <div className="mt-4">
+    {/* Tooltip for delete functionality */}
     <p className="text-sm text-gray-500 italic mb-2">
       Hover over items to delete them
     </p>
