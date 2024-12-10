@@ -5,6 +5,7 @@ const nextConfig = {
       unoptimized: true,
     },
     basePath: '/story-points-estimator',
+    distDir: 'out',
   }
   
   module.exports = nextConfig
