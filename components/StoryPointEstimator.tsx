@@ -279,7 +279,24 @@ export function StoryPointEstimator() {
           </p>
         </div>
       )}
-
+// Add this tooltip text in the Team Members section, just before the team members list
+<div className="flex flex-wrap gap-2 mt-2">
+  <p className="w-full text-sm text-gray-500 italic mb-2">
+    Hover over items to delete them
+  </p>
+  {teamMembers.map(member => (
+    <div key={member.id} className="flex items-center px-3 py-1 bg-blue-100 rounded group">
+      <span>{member.name}</span>
+      <button
+        onClick={() => deleteTeamMember(member.id)}
+        className="ml-2 text-blue-600 opacity-25 group-hover:opacity-100 transition-opacity"
+        aria-label={`Delete ${member.name}`}
+      >
+        <X size={16} />
+      </button>
+    </div>
+  ))}
+</div>
       {/* Team Member Management */}
       <div className="space-y-2 bg-white p-4 rounded-lg shadow">
         <h3 className="text-lg font-medium">Step 1: Add Team Members</h3>
@@ -312,7 +329,26 @@ export function StoryPointEstimator() {
           ))}
         </div>
       </div>
-
+      // Also add the tooltip text in the Tasks section, before the tasks list
+{tasks.length > 0 && (
+  <div className="mt-4">
+    <p className="text-sm text-gray-500 italic mb-2">
+      Hover over items to delete them
+    </p>
+    {tasks.map(task => (
+      <div key={task.id} className="flex items-center justify-between p-2 hover:bg-gray-50 group">
+        <span>{task.name}</span>
+        <button
+          onClick={() => deleteTask(task.id)}
+          className="text-red-500 opacity-25 group-hover:opacity-100 transition-opacity"
+          aria-label={`Delete ${task.name}`}
+        >
+          <X size={16} />
+        </button>
+      </div>
+    ))}
+  </div>
+)}
       {/* Task Management */}
       <div className="space-y-2 bg-white p-4 rounded-lg shadow">
         <h3 className="text-lg font-medium">Step 2: Add Tasks</h3>
