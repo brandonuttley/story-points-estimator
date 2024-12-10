@@ -85,6 +85,31 @@ The GitHub Actions workflow will automatically:
 
 You can monitor the deployment progress in the "Actions" tab of your GitHub repository.
 
+## Running Local and Online Versions
+
+The Story Points Estimator can run both locally and online simultaneously. Here's how each version works:
+
+### Local Version (Development)
+- Requires Terminal to be running with `npm run dev` active
+- Only accessible when your development server is running
+- Available at `localhost:3000`
+- Shows real-time updates as you make code changes
+- Great for development and testing
+- Will stop when you close Terminal or stop the development server
+
+### GitHub Pages Version (Production)
+- Always available at https://brandonuttley.github.io/story-points-estimator
+- Runs independently of your local environment
+- Doesn't require your Terminal or local machine
+- Updates only when you push new changes to GitHub
+- Perfect for sharing with your team
+
+You can use both versions for different purposes:
+1. Use the local version for developing and testing new features
+2. Have team members use the stable GitHub Pages version
+3. Push your changes to GitHub when ready
+4. Both versions can run at the same time without conflict
+
 ## Project Structure
 
 Key files and their purposes:
