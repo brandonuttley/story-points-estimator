@@ -1,6 +1,6 @@
 'use client';
 
-import { StoryPointEstimator } from './components/StoryPointEstimator';
+import { StoryPointEstimator } from '../components/StoryPointEstimator';
 
 export default function Home() {
   return (
