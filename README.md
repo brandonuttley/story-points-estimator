@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Story Points Estimator - Setup and Maintenance Guide
 
-## Getting Started
+## Overview
+The Story Points Estimator is a Next.js application that helps development teams estimate task complexity using animal-based analogies. This guide explains how to run, deploy, and maintain the application.
 
-First, run the development server:
+## Running Locally
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+- Node.js installed on your computer
+- Git installed on your computer
+- VS Code or another code editor
+- A terminal/command prompt
+
+### Local Setup Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/brandonuttley/story-points-estimator.git
+   cd story-points-estimator
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
+
+The application should now be running locally. Any changes you make to the code will automatically refresh in the browser.
+
+## Accessing the Online Version
+
+The application is deployed on GitHub Pages and can be accessed at:
+```
+https://brandonuttley.github.io/story-points-estimator
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Making and Deploying Changes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Local Development
+1. Open the project in VS Code:
+   ```bash
+   code .
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Make your desired changes to the code
+   - Main component: `/components/StoryPointEstimator.tsx`
+   - Page layout: `/app/page.tsx`
+   - Configuration: `next.config.js`
 
-## Learn More
+3. Test your changes locally using `npm run dev`
 
-To learn more about Next.js, take a look at the following resources:
+### Deploying to GitHub Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After making changes:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Save all modified files
 
-## Deploy on Vercel
+2. Stage your changes:
+   ```bash
+   git add .
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Commit your changes:
+   ```bash
+   git commit -m "Description of your changes"
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Push to GitHub:
+   ```bash
+   git push origin main
+   ```
+
+The GitHub Actions workflow will automatically:
+- Build the application
+- Deploy to GitHub Pages
+- Make your changes live at the GitHub Pages URL
+
+You can monitor the deployment progress in the "Actions" tab of your GitHub repository.
+
+## Project Structure
+
+Key files and their purposes:
+
+- `/components/StoryPointEstimator.tsx`: Main application component
+- `/app/page.tsx`: Next.js page component
+- `next.config.js`: Next.js configuration
+- `.github/workflows/deploy.yml`: GitHub Actions workflow for deployment
+
+## Troubleshooting
+
+### Common Local Development Issues
+
+1. **Module Not Found Errors**
+   - Solution: Run `npm install` to ensure all dependencies are installed
+
+2. **Port Already in Use**
+   - Solution: Kill the process using the port or use a different port:
+     ```bash
+     npm run dev -- -p 3001
+     ```
+
+### Deployment Issues
+
+1. **Failed GitHub Actions**
+   - Check the Actions tab for specific error messages
+   - Verify your changes compile locally before pushing
+   - Ensure all files are properly committed and pushed
+
+2. **Page Not Updating**
+   - Clear your browser cache
+   - Wait a few minutes for the deployment to complete
+   - Check the Actions tab for deployment status
+
+## Reconnecting to GitHub
+
+If you need to reconnect to GitHub after closing and reopening Terminal:
+
+1. Navigate to your project directory:
+   ```bash
+   cd story-points-new
+   ```
+
+2. Check if you're already connected:
+   ```bash
+   git remote -v
+   ```
+
+3. If needed, reconnect to your repository:
+   ```bash
+   git remote add origin https://github.com/brandonuttley/story-points-estimator.git
+   ```
+
+4. Set the main branch:
+   ```bash
+   git branch -M main
+   ```
+
+5. Verify connection by pulling latest changes:
+   ```bash
+   git pull origin main
+   ```
+
+Note: If prompted for credentials, use your GitHub username and Personal Access Token (PAT) as the password.
+
+## Support and Updates
+
+For questions or issues:
+1. Check the [GitHub repository issues](https://github.com/brandonuttley/story-points-estimator/issues)
+2. Create a new issue if needed
+3. Include as much detail as possible about the problem
+
+## Additional Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
