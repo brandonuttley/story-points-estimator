@@ -13,7 +13,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Story Points Estimator',
   description: 'Animal-based story point estimation tool',
 }
