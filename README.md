@@ -3,6 +3,9 @@
 ## Overview
 The Story Points Estimator is a Next.js application that helps development teams estimate task complexity using animal-based analogies. This guide explains how to run, deploy, and maintain the application.
 
+## Public Link
+The public link to the application is https://brandonuttley.github.io/story-points-estimator.
+
 ## Running Locally
 
 ### Prerequisites
